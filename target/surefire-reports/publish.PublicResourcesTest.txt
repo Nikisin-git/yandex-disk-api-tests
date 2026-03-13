@@ -1,0 +1,34 @@
+-------------------------------------------------------------------------------
+Test set: publish.PublicResourcesTest
+-------------------------------------------------------------------------------
+Tests run: 20, Failures: 3, Errors: 0, Skipped: 1, Time elapsed: 12.61 s <<< FAILURE! -- in publish.PublicResourcesTest
+publish.PublicResourcesTest.getPublicResourceInfo_validKey_returns200 -- Time elapsed: 0.177 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: ПРЕДУПРЕЖДЕНИЕ: GET /v1/disk/public/resources (валидный public_key) — Ожидаемый код: 200, Полученный код: 404. Тело ответа: {"error":"DiskNotFoundError","description":"Resource not found.","message":"Не удалось найти запрошенный ресурс."}
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at base.BaseTest.assertStatusCode(BaseTest.java:125)
+	at publish.PublicResourcesTest.getPublicResourceInfo_validKey_returns200(PublicResourcesTest.java:189)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+publish.PublicResourcesTest.savePublicResourceToDisk_validKey_returns201 -- Time elapsed: 0.550 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: ПРЕДУПРЕЖДЕНИЕ: POST /v1/disk/public/resources/save-to-disk (валидный public_key) — Ожидаемые коды: [201, 202], Полученный код: 404. Тело ответа: {"error":"DiskNotFoundError","description":"Resource not found.","message":"Не удалось найти запрошенный ресурс."}
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at base.BaseTest.assertStatusCodeOneOf(BaseTest.java:149)
+	at publish.PublicResourcesTest.savePublicResourceToDisk_validKey_returns201(PublicResourcesTest.java:291)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+publish.PublicResourcesTest.unpublishResource_publishedResource_returns200 -- Time elapsed: 1.204 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: ПРЕДУПРЕЖДЕНИЕ: PUT /v1/disk/resources/unpublish (опубликованный ресурс) — Ожидаемый код: 200, Полученный код: 404. Тело ответа: {"error":"DiskNotFoundError","description":"Resource not found.","message":"Не удалось найти запрошенный ресурс."}
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at base.BaseTest.assertStatusCode(BaseTest.java:125)
+	at publish.PublicResourcesTest.unpublishResource_publishedResource_returns200(PublicResourcesTest.java:355)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

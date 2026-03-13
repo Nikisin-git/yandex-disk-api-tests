@@ -1,0 +1,34 @@
+-------------------------------------------------------------------------------
+Test set: downloadupload.DownloadUploadTest
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 8.906 s <<< FAILURE! -- in downloadupload.DownloadUploadTest
+downloadupload.DownloadUploadTest.getUploadLink_existingFileNoOverwrite_returns409 -- Time elapsed: 0.722 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: ПРЕДУПРЕЖДЕНИЕ: GET /v1/disk/resources/upload (файл существует, overwrite=false) — Ожидаемые коды: [200, 409], Полученный код: 423. Тело ответа: {"error":"DiskResourceLockedError","description":"Resource is locked.","message":"Ресурс заблокирован. Возможно, над ним выполняется другая операция."}
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at base.BaseTest.assertStatusCodeOneOf(BaseTest.java:149)
+	at downloadupload.DownloadUploadTest.getUploadLink_existingFileNoOverwrite_returns409(DownloadUploadTest.java:140)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+downloadupload.DownloadUploadTest.getUploadLink_overwrite_returns200 -- Time elapsed: 0.365 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: ПРЕДУПРЕЖДЕНИЕ: GET /v1/disk/resources/upload (overwrite=true) — Ожидаемый код: 200, Полученный код: 409. Тело ответа: {"error":"DiskPathDoesntExistsError","description":"Specified path \"disk:/autotest_temp/download_upload_tests/test_download.txt\" doesn't exists.","message":"Указанного пути \"disk:/autotest_temp/download_upload_tests/test_download.txt\" не существует."}
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at base.BaseTest.assertStatusCode(BaseTest.java:125)
+	at downloadupload.DownloadUploadTest.getUploadLink_overwrite_returns200(DownloadUploadTest.java:154)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+downloadupload.DownloadUploadTest.uploadByUrl_validUrl_returns202 -- Time elapsed: 0.716 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: ПРЕДУПРЕЖДЕНИЕ: POST /v1/disk/resources/upload (загрузка по URL) — Ожидаемый код: 202, Полученный код: 409. Тело ответа: {"error":"DiskPathDoesntExistsError","description":"Specified path \"disk:/autotest_temp/download_upload_tests/url_uploaded_file.txt\" doesn't exists.","message":"Указанного пути \"disk:/autotest_temp/download_upload_tests/url_uploaded_file.txt\" не существует."}
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
+	at base.BaseTest.assertStatusCode(BaseTest.java:125)
+	at downloadupload.DownloadUploadTest.uploadByUrl_validUrl_returns202(DownloadUploadTest.java:198)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
