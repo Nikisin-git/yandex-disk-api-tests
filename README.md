@@ -30,7 +30,7 @@ src
    │          └── TrashTest.java                 — Корзина
    │      
    │     
-   └── config.properties                  — Файл конфигурации (здесь указывается токен)
+   └── config.properties                         — Файл конфигурации (здесь указывается токен)
 
 ```
 
@@ -97,7 +97,7 @@ oauth.token=y0_AgAAAABkx9q7AADLWwAAAAD3aCkLAAA...
 
 **Linux/macOS:**
 ```bash
-export OAUTH_TOKEN="ваш_токен"
+  export OAUTH_TOKEN="ваш_токен"
 ```
 
 **Windows (PowerShell):**
@@ -108,7 +108,7 @@ $env:OAUTH_TOKEN="ваш_токен"
 ### Способ 3: Параметр командной строки Maven
 
 ```bash
-mvn test -Doauth.token="ваш_токен"
+  mvn test -Doauth.token="ваш_токен"
 ```
 
 ### Как получить OAuth-токен
@@ -138,22 +138,22 @@ mvn test -Doauth.token="ваш_токен"
 
 ```bash
 # Запуск всех тестов
-mvn clean test
+  mvn clean test
 
 # Запуск с указанием токена через параметр
-mvn clean test -Doauth.token="y0__xCUpPXeCBjO8D4gxKCb3RYwk-jRiAjQ2nhx58prkzcemfl0Ng3a_GtLAQ"
+  mvn clean test -Doauth.token="y0__xCUpPXeCBjO8D4gxKCb3RYwk-jRiAjQ2nhx58prkzcemfl0Ng3a_GtLAQ"
 
-# Запуск конкретной группы тестов
+  # Запуск конкретной группы тестов
 mvn clean test -Dtest="diskinfo.DiskInfoTest"
 mvn clean test -Dtest="downloadupload.DownloadUploadTest"
 mvn clean test -Dtest="operations.FileOperationsTest"
 mvn clean test -Dtest="publish.PublicResourcesTest"
 mvn clean test -Dtest="shared.SharedDrivesTest"
 mvn clean test -Dtest="shared.SharedDriveFilesTest"
-mvn clean test -Dtest="trash.TrashTest"
+  mvn clean test -Dtest="trash.TrashTest"
 
 # Запуск конкретного теста
-mvn clean test -Dtest="diskinfo.DiskInfoTest#getDiskInfo_validToken_returns200"
+  mvn clean test -Dtest="diskinfo.DiskInfoTest#getDiskInfo_validToken_returns200"
 ```
 
 ### Из IntelliJ IDEA
@@ -180,18 +180,18 @@ mvn clean install -U
 1. Проверьте доступность [Maven Central](https://mvnrepository.com/artifact/com.yandex.android/disk-restapi-sdk/1.03)
 2. Если артефакт недоступен, скачайте его вручную и установите локально:
 ```bash
-mvn install:install-file \
-  -Dfile=disk-restapi-sdk-1.03.jar \
-  -DgroupId=com.yandex.android \
-  -DartifactId=disk-restapi-sdk \
-  -Dversion=1.03 \
-  -Dpackaging=jar
+   mvn install:install-file \
+     -Dfile=disk-restapi-sdk-1.03.jar \
+     -DgroupId=com.yandex.android \
+     -DartifactId=disk-restapi-sdk \
+     -Dversion=1.03 \
+     -Dpackaging=jar
 ```
 3. Или клонируйте [исходный код SDK](https://github.com/yandex-disk/yandex-disk-restapi-java) и соберите локально:
 ```bash
-git clone https://github.com/yandex-disk/yandex-disk-restapi-java.git
-cd yandex-disk-restapi-java
-mvn clean install
+   git clone https://github.com/yandex-disk/yandex-disk-restapi-java.git
+   cd yandex-disk-restapi-java
+   mvn clean install
 ```
 
 ### Проблема: IntelliJ IDEA не видит тестовые классы
