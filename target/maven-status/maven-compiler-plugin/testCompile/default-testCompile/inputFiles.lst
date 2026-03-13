@@ -1,8 +1,8 @@
-E:\Downloads\yandex-disk-api-tests (2)\src\test\java\base\BaseTest.java
-E:\Downloads\yandex-disk-api-tests (2)\src\test\java\diskinfo\DiskInfoTest.java
-E:\Downloads\yandex-disk-api-tests (2)\src\test\java\downloadupload\DownloadUploadTest.java
-E:\Downloads\yandex-disk-api-tests (2)\src\test\java\operations\FileOperationsTest.java
-E:\Downloads\yandex-disk-api-tests (2)\src\test\java\publish\PublicResourcesTest.java
-E:\Downloads\yandex-disk-api-tests (2)\src\test\java\shared\SharedDriveFilesTest.java
-E:\Downloads\yandex-disk-api-tests (2)\src\test\java\shared\SharedDrivesTest.java
-E:\Downloads\yandex-disk-api-tests (2)\src\test\java\trash\TrashTest.java
+E:\Downloads\yandex-disk\src\test\java\base\BaseTest.java
+E:\Downloads\yandex-disk\src\test\java\diskinfo\DiskInfoTest.java
+E:\Downloads\yandex-disk\src\test\java\downloadupload\DownloadUploadTest.java
+E:\Downloads\yandex-disk\src\test\java\operations\FileOperationsTest.java
+E:\Downloads\yandex-disk\src\test\java\publish\PublicResourcesTest.java
+E:\Downloads\yandex-disk\src\test\java\shared\SharedDriveFilesTest.java
+E:\Downloads\yandex-disk\src\test\java\shared\SharedDrivesTest.java
+E:\Downloads\yandex-disk\src\test\java\trash\TrashTest.java

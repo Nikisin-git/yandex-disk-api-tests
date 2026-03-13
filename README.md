@@ -136,25 +136,169 @@ $env:OAUTH_TOKEN="ваш_токен"
 
 ### Из командной строки (Maven)
 
+```### Запуск всех тестов
 ```bash
-   
-      # Запуск всех тестов
-      mvn clean test
-        
-      # Запуск с указанием токена через параметр
-      mvn clean test -Doauth.token=YOUR_OAUTH_TOKEN_HERE
-        
-        # Запуск конкретной группы тестов
-      mvn clean test -Dtest=diskinfo.DiskInfoTest
-      mvn clean test -Dtest=downloadupload.DownloadUploadTest
-      mvn clean test -Dtest=operations.FileOperationsTest
-      mvn clean test -Dtest=publish.PublicResourcesTest
-      mvn clean test -Dtest=shared.SharedDrivesTest
-      mvn clean test -Dtest=.SharedDriveFilesTest
-      mvn clean test -Dtest=trash.TrashTest
-        
-      mvn clean test -Dtest=diskinfo.DiskInfoTest#getDiskInfo_validToken_returns200 
-````
+mvn test
+```
+
+### Запуск отдельного класса тестов
+```bash
+  mvn test -Dtest=DiskInfoTest
+  mvn test -Dtest=DownloadUploadTest
+  mvn test -Dtest=FileOperationsTest
+  mvn test -Dtest=PublicResourcesTest
+  mvn test -Dtest=SharedDriveFilesTest
+  mvn test -Dtest=SharedDrivesTest
+  mvn test -Dtest=TrashTest
+
+
+```
+
+### Запуск конкретного теста независимо
+Для запуска отдельного метода теста используйте следующую команду:
+`mvn test -Dtest=ИмяКласса#имяМетода`
+---
+
+## Список тестов и команды запуска
+
+### 1. Получение информации о файлах и папках (DiskInfoTest)
+| № | Описание теста | Команда для запуска |
+|---|----------------|---------------------|
+| 1 | GET Данные о Диске пользователя — 200 | `mvn test -Dtest=DiskInfoTest#getDiskInfo_validToken_returns200` |
+| 2 | GET Данные о Диске (невалидный токен) — 401 | `mvn test -Dtest=DiskInfoTest#getDiskInfo_invalidToken_returns401` |
+| 3 | GET Данные о Диске (без авторизации) — 401 | `mvn test -Dtest=DiskInfoTest#getDiskInfo_noAuth_returns401` |
+| 4 | GET Метаинформация (корневая папка) — 200 | `mvn test -Dtest=DiskInfoTest#getResourceInfo_rootFolder_returns200` |
+| 5 | GET Метаинформация (несуществующий путь) — 404 | `mvn test -Dtest=DiskInfoTest#getResourceInfo_nonExistentPath_returns404` |
+| 6 | GET Метаинформация (невалидный токен) — 401 | `mvn test -Dtest=DiskInfoTest#getResourceInfo_invalidToken_returns401` |
+| 7 | GET Метаинформация (без параметра path) — 400 | `mvn test -Dtest=DiskInfoTest#getResourceInfo_missingPathParam_returns400` |
+| 8 | GET Метаинформация (limit и offset) — 200 | `mvn test -Dtest=DiskInfoTest#getResourceInfo_withLimitAndOffset_returns200` |
+| 9 | GET Плоский список всех файлов — 200 | `mvn test -Dtest=DiskInfoTest#getFilesList_validToken_returns200` |
+| 10 | GET Список файлов (limit=5) — 200 | `mvn test -Dtest=DiskInfoTest#getFilesList_withLimit_returns200` |
+| 11 | GET Список файлов (media_type) — 200 | `mvn test -Dtest=DiskInfoTest#getFilesList_withMediaType_returns200` |
+| 12 | GET Список файлов (невалидный токен) — 401 | `mvn test -Dtest=DiskInfoTest#getFilesList_invalidToken_returns401` |
+| 13 | GET Последние загруженные файлы — 200 | `mvn test -Dtest=DiskInfoTest#getLastUploaded_validToken_returns200` |
+| 14 | GET Последние файлы (limit=3) — 200 | `mvn test -Dtest=DiskInfoTest#getLastUploaded_withLimit_returns200` |
+| 15 | GET Последние файлы (невалидный токен) — 401 | `mvn test -Dtest=DiskInfoTest#getLastUploaded_invalidToken_returns401` |
+| 16 | GET Последние файлы (без авторизации) — 401 | `mvn test -Dtest=DiskInfoTest#getLastUploaded_noAuth_returns401` |
+
+### 2. Скачивание и загрузка (DownloadUploadTest)
+| № | Описание теста | Команда для запуска |
+|---|----------------|---------------------|
+| 17 | GET Скачивание (существующий файл) — 200 | `mvn test -Dtest=DownloadUploadTest#getDownloadLink_existingFile_returns200` |
+| 18 | GET Скачивание (несуществующий файл) — 404 | `mvn test -Dtest=DownloadUploadTest#getDownloadLink_nonExistentFile_returns404` |
+| 19 | GET Скачивание (невалидный токен) — 401 | `mvn test -Dtest=DownloadUploadTest#getDownloadLink_invalidToken_returns401` |
+| 20 | GET Скачивание (без параметра path) — 400 | `mvn test -Dtest=DownloadUploadTest#getDownloadLink_missingPath_returns400` |
+| 21 | GET Ссылка для загрузки (новый файл) — 200 | `mvn test -Dtest=DownloadUploadTest#getUploadLink_newFile_returns200` |
+| 22 | GET Ссылка для загрузки (уже существует) — 409 | `mvn test -Dtest=DownloadUploadTest#getUploadLink_existingFileNoOverwrite_returns409` |
+| 23 | GET Ссылка для загрузки (overwrite=true) — 200 | `mvn test -Dtest=DownloadUploadTest#getUploadLink_overwrite_returns200` |
+| 24 | GET Ссылка для загрузки (невалидный токен) — 401 | `mvn test -Dtest=DownloadUploadTest#getUploadLink_invalidToken_returns401` |
+| 25 | GET Ссылка для загрузки (без path) — 400 | `mvn test -Dtest=DownloadUploadTest#getUploadLink_missingPath_returns400` |
+| 26 | POST Загрузка по URL (корректный URL) — 202 | `mvn test -Dtest=DownloadUploadTest#uploadByUrl_validUrl_returns202` |
+| 27 | POST Загрузка по URL (невалидный токен) — 401 | `mvn test -Dtest=DownloadUploadTest#uploadByUrl_invalidToken_returns401` |
+| 28 | POST Загрузка по URL (без url) — 400 | `mvn test -Dtest=DownloadUploadTest#uploadByUrl_missingUrl_returns400` |
+| 29 | POST Загрузка по URL (без path) — 400 | `mvn test -Dtest=DownloadUploadTest#uploadByUrl_missingPath_returns400` |
+
+### 3. Операции над файлами и папками (FileOperationsTest)
+| № | Описание теста | Команда для запуска |
+|---|----------------|---------------------|
+| 30 | PUT Создание папки (новая) — 201 | `mvn test -Dtest=FileOperationsTest#createFolder_newFolder_returns201` |
+| 31 | PUT Создание папки (уже существует) — 409 | `mvn test -Dtest=FileOperationsTest#createFolder_alreadyExists_returns409` |
+| 32 | PUT Создание папки (невалидный токен) — 401 | `mvn test -Dtest=FileOperationsTest#createFolder_invalidToken_returns401` |
+| 33 | PUT Создание папки (без path) — 400 | `mvn test -Dtest=FileOperationsTest#createFolder_missingPath_returns400` |
+| 34 | PUT Создание папки (родитель не существует) — 409 | `mvn test -Dtest=FileOperationsTest#createFolder_parentNotExists_returns409` |
+| 35 | POST Копирование (корректное) — 201 | `mvn test -Dtest=FileOperationsTest#copyResource_validCopy_returns201` |
+| 36 | POST Копирование (назначение существует) — 409 | `mvn test -Dtest=FileOperationsTest#copyResource_destExists_returns409` |
+| 37 | POST Копирование (источник не найден) — 404 | `mvn test -Dtest=FileOperationsTest#copyResource_sourceNotFound_returns404` |
+| 38 | POST Копирование (невалидный токен) — 401 | `mvn test -Dtest=FileOperationsTest#copyResource_invalidToken_returns401` |
+| 39 | POST Копирование (overwrite=true) — 201 | `mvn test -Dtest=FileOperationsTest#copyResource_overwrite_returns201` |
+| 40 | POST Перемещение (корректное) — 201 | `mvn test -Dtest=FileOperationsTest#moveResource_validMove_returns201` |
+| 41 | POST Перемещение (источник не найден) — 404 | `mvn test -Dtest=FileOperationsTest#moveResource_sourceNotFound_returns404` |
+| 42 | POST Перемещение (назначение существует) — 409 | `mvn test -Dtest=FileOperationsTest#moveResource_destExists_returns409` |
+| 43 | POST Перемещение (невалидный токен) — 401 | `mvn test -Dtest=FileOperationsTest#moveResource_invalidToken_returns401` |
+| 44 | DELETE Удаление (существующая папка) — 204 | `mvn test -Dtest=FileOperationsTest#deleteResource_existingFolder_returns204` |
+| 45 | DELETE Удаление (не существует) — 404 | `mvn test -Dtest=FileOperationsTest#deleteResource_notFound_returns404` |
+| 46 | DELETE Удаление (невалидный токен) — 401 | `mvn test -Dtest=FileOperationsTest#deleteResource_invalidToken_returns401` |
+| 47 | DELETE Удаление (без path) — 400 | `mvn test -Dtest=FileOperationsTest#deleteResource_missingPath_returns400` |
+| 48 | DELETE Удаление (в Корзину) — 204 | `mvn test -Dtest=FileOperationsTest#deleteResource_toTrash_returns204` |
+| 49 | GET Статус операции (неверный ID) — 404 | `mvn test -Dtest=FileOperationsTest#getOperationStatus_invalidId_returns404` |
+| 50 | GET Статус операции (невалидный токен) — 401 | `mvn test -Dtest=FileOperationsTest#getOperationStatus_invalidToken_returns401` |
+| 51 | GET Статус операции (из асинхронной) — 200 | `mvn test -Dtest=FileOperationsTest#getOperationStatus_fromAsyncOperation_returns200` |
+
+### 4. Публичные файлы и папки (PublicResourcesTest)
+| № | Описание теста | Команда для запуска |
+|---|----------------|---------------------|
+| 52 | PUT Публикация папки — 200 | `mvn test -Dtest=PublicResourcesTest#publishResource_existingFolder_returns200` |
+| 53 | PUT Публикация файла — 200 | `mvn test -Dtest=PublicResourcesTest#publishResource_existingFile_returns200` |
+| 54 | PUT Публикация (не найден) — 404 | `mvn test -Dtest=PublicResourcesTest#publishResource_notFound_returns404` |
+| 55 | PUT Публикация (невалидный токен) — 401 | `mvn test -Dtest=PublicResourcesTest#publishResource_invalidToken_returns401` |
+| 56 | GET Список публичных ресурсов — 200 | `mvn test -Dtest=PublicResourcesTest#getPublishedResources_validToken_returns200` |
+| 57 | GET Список публ. ресурсов (limit=5) — 200 | `mvn test -Dtest=PublicResourcesTest#getPublishedResources_withLimit_returns200` |
+| 58 | GET Список публ. ресурсов (невалидный токен) — 401 | `mvn test -Dtest=PublicResourcesTest#getPublishedResources_invalidToken_returns401` |
+| 59 | GET Метаинформация (валидный key) — 200 | `mvn test -Dtest=PublicResourcesTest#getPublicResourceInfo_validKey_returns200` |
+| 60 | GET Метаинформация (невалидный key) — 404 | `mvn test -Dtest=PublicResourcesTest#getPublicResourceInfo_invalidKey_returns404` |
+| 61 | GET Метаинформация (без key) — 400 | `mvn test -Dtest=PublicResourcesTest#getPublicResourceInfo_missingKey_returns400` |
+| 62 | GET Скачивание публичного (валидный key) — 200 | `mvn test -Dtest=PublicResourcesTest#downloadPublicResource_validKey_returns200` |
+| 63 | GET Скачивание публичного (невалидный key) — 404 | `mvn test -Dtest=PublicResourcesTest#downloadPublicResource_invalidKey_returns404` |
+| 64 | GET Скачивание публичного (без key) — 400 | `mvn test -Dtest=PublicResourcesTest#downloadPublicResource_missingKey_returns400` |
+| 65 | POST Сохранение в «Загрузки» (валидный key) — 201 | `mvn test -Dtest=PublicResourcesTest#savePublicResourceToDisk_validKey_returns201` |
+| 66 | POST Сохранение (невалидный key) — 404 | `mvn test -Dtest=PublicResourcesTest#savePublicResourceToDisk_invalidKey_returns404` |
+| 67 | POST Сохранение (невалидный токен) — 401 | `mvn test -Dtest=PublicResourcesTest#savePublicResourceToDisk_invalidToken_returns401` |
+| 68 | POST Сохранение (без key) — 400 | `mvn test -Dtest=PublicResourcesTest#savePublicResourceToDisk_missingKey_returns400` |
+| 69 | PUT Снятие публикации (валидный путь) — 200 | `mvn test -Dtest=PublicResourcesTest#unpublishResource_publishedResource_returns200` |
+| 70 | PUT Снятие публикации (не найден) — 404 | `mvn test -Dtest=PublicResourcesTest#unpublishResource_notFound_returns404` |
+| 71 | PUT Снятие публикации (невалидный токен) — 401 | `mvn test -Dtest=PublicResourcesTest#unpublishResource_invalidToken_returns401` |
+
+### 5. Файлы и папки на общем диске (SharedDriveFilesTest)
+| № | Описание теста | Команда для запуска |
+|---|----------------|---------------------|
+| 72 | GET Метаинформация (не найден) — 404 | `mvn test -Dtest=SharedDriveFilesTest#getSharedDriveResource_notFound_returns404` |
+| 73 | GET Метаинформация (невалидный токен) — 401 | `mvn test -Dtest=SharedDriveFilesTest#getSharedDriveResource_invalidToken_returns401` |
+| 74 | PUT Создание папки (невалидный токен) — 401 | `mvn test -Dtest=SharedDriveFilesTest#createFolderOnSharedDrive_invalidToken_returns401` |
+| 75 | POST Копирование (источник не найден) — 404 | `mvn test -Dtest=SharedDriveFilesTest#copyOnSharedDrive_sourceNotFound_returns404` |
+| 76 | POST Копирование (невалидный токен) — 401 | `mvn test -Dtest=SharedDriveFilesTest#copyOnSharedDrive_invalidToken_returns401` |
+| 77 | POST Перемещение (источник не найден) — 404 | `mvn test -Dtest=SharedDriveFilesTest#moveOnSharedDrive_sourceNotFound_returns404` |
+| 78 | POST Перемещение (невалидный токен) — 401 | `mvn test -Dtest=SharedDriveFilesTest#moveOnSharedDrive_invalidToken_returns401` |
+| 79 | DELETE Удаление (не найден) — 404 | `mvn test -Dtest=SharedDriveFilesTest#deleteOnSharedDrive_notFound_returns404` |
+| 80 | DELETE Удаление (невалидный токен) — 401 | `mvn test -Dtest=SharedDriveFilesTest#deleteOnSharedDrive_invalidToken_returns401` |
+
+### 6. Общие диски организации (SharedDrivesTest)
+| № | Описание теста | Команда для запуска |
+|---|----------------|---------------------|
+| 81 | GET Общие диски (проверка доступности) — 200/404 | `mvn test -Dtest=SharedDrivesTest#getSharedDrives_checkAvailability_returns200or404` |
+| 82 | GET Общие диски (невалидный токен) — 401 | `mvn test -Dtest=SharedDrivesTest#getSharedDrives_invalidToken_returns401` |
+| 83 | GET Общие диски (без авторизации) — 401 | `mvn test -Dtest=SharedDrivesTest#getSharedDrives_noAuth_returns401` |
+| 84 | GET Общие диски (pagination) — 200/404 | `mvn test -Dtest=SharedDrivesTest#getSharedDrives_withPagination_returns200or404` |
+| 85 | GET Общие диски (неверный подпуть) — 404 | `mvn test -Dtest=SharedDrivesTest#getSharedDrives_nonExistentSubPath_returns404` |
+
+### 7. Корзина (TrashTest)
+| № | Описание теста | Команда для запуска |
+|---|----------------|---------------------|
+| 86 | GET Содержимое Корзины — 200 | `mvn test -Dtest=TrashTest#getTrashContents_validToken_returns200` |
+| 87 | GET Содержимое Корзины (с path) — 200 | `mvn test -Dtest=TrashTest#getTrashContents_withPath_returns200` |
+| 88 | GET Содержимое Корзины (limit=5) — 200 | `mvn test -Dtest=TrashTest#getTrashContents_withLimit_returns200` |
+| 89 | GET Содержимое Корзины (невалидный токен) — 401 | `mvn test -Dtest=TrashTest#getTrashContents_invalidToken_returns401` |
+| 90 | GET Содержимое Корзины (без авторизации) — 401 | `mvn test -Dtest=TrashTest#getTrashContents_noAuth_returns401` |
+| 91 | GET Содержимое Корзины (неверный путь) — 404 | `mvn test -Dtest=TrashTest#getTrashContents_nonExistentPath_returns404` |
+| 92 | GET Содержимое Корзины (sort и offset) — 200 | `mvn test -Dtest=TrashTest#getTrashContents_withSortAndOffset_returns200` |
+| 93 | PUT Восстановление (существующий ресурс) — 201 | `mvn test -Dtest=TrashTest#restoreFromTrash_existingResource_returns201` |
+| 94 | PUT Восстановление (не найден) — 404 | `mvn test -Dtest=TrashTest#restoreFromTrash_notFound_returns404` |
+| 95 | PUT Восстановление (невалидный токен) — 401 | `mvn test -Dtest=TrashTest#restoreFromTrash_invalidToken_returns401` |
+| 96 | PUT Восстановление (без авторизации) — 401 | `mvn test -Dtest=TrashTest#restoreFromTrash_noAuth_returns401` |
+| 97 | PUT Восстановление (с новым именем) — 201/404 | `mvn test -Dtest=TrashTest#restoreFromTrash_withName_returns201or404` |
+| 98 | DELETE Очистка (невалидный токен) — 401 | `mvn test -Dtest=TrashTest#clearTrash_invalidToken_returns401` |
+| 99 | DELETE Очистка (без авторизации) — 401 | `mvn test -Dtest=TrashTest#clearTrash_noAuth_returns401` |
+| 100 | DELETE Очистка (ресурс не найден) — 404 | `mvn test -Dtest=TrashTest#clearTrash_specificResource_notFound_returns404` |
+| 101 | DELETE Очистка (полная) — 204 | `mvn test -Dtest=TrashTest#clearTrash_fullClear_returns204` |
+
+### 8. SDK Тесты (yandex-disk-restapi-java)
+| № | Описание теста | Команда для запуска |
+|---|----------------|---------------------|
+| 102 | QueryBuilderTest | `mvn test -Dtest=QueryBuilderTest` |
+| 103 | RestClientTest | `mvn test -Dtest=RestClientTest` |
+| 104 | ISO8601Test / ResourcePathTest | `mvn test -Dtest=ISO8601Test` или `ResourcePathTest` |
+
+---
+
 
 ### Из IntelliJ IDEA
 

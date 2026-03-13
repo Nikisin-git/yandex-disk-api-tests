@@ -1,5 +1,0 @@
-# Created at 2026-03-13T08:55:06.971
-Boot Manifest-JAR contains absolute paths in classpath 'E:\Downloads\yandex-disk-api-tests (2)\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-'other' has different root
-

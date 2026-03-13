@@ -1,14 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: operations.FileOperationsTest
 -------------------------------------------------------------------------------
-Tests run: 22, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 30.19 s <<< FAILURE! -- in operations.FileOperationsTest
-operations.FileOperationsTest.copyResource_validCopy_returns201 -- Time elapsed: 3.558 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: ПРЕДУПРЕЖДЕНИЕ: POST /v1/disk/resources/copy (корректное копирование) — Ожидаемые коды: [201, 202], Полученный код: 409. Тело ответа: {"error":"DiskResourceAlreadyExistsError","description":"Resource \"disk:/autotest_temp/file_operations_tests/copy_dest\" already exists.","message":"Ресурс \"disk:/autotest_temp/file_operations_tests/copy_dest\" уже существует."}
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
-	at base.BaseTest.assertStatusCodeOneOf(BaseTest.java:149)
-	at operations.FileOperationsTest.copyResource_validCopy_returns201(FileOperationsTest.java:156)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 32.11 s -- in operations.FileOperationsTest

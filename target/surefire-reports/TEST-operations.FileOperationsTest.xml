@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="operations.FileOperationsTest" time="30.192" tests="22" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="operations.FileOperationsTest" time="32.113" tests="22" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1251"/>
-    <property name="oauth.token" value="y0__xCUpPXeCBjO8D4gxKCb3RYwk-jRiAjQ2nhx58prkzcemfl0Ng3a_GtLAQ"/>
-    <property name="java.class.path" value="E:\Downloads\yandex-disk-api-tests (2)\target\test-classes;E:\Downloads\yandex-disk-api-tests (2)\target\classes;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\Nikis\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Nikis\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\Nikis\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\Nikis\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\rest-assured\5.4.0\rest-assured-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy\4.0.16\groovy-4.0.16.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy-xml\4.0.16\groovy-xml-4.0.16.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\Nikis\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Nikis\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\Nikis\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Nikis\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\xml-path\5.4.0\xml-path-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\Nikis\.m2\repository\com\yandex\android\disk-restapi-sdk\1.03\disk-restapi-sdk-1.03.jar;C:\Users\Nikis\.m2\repository\com\google\code\gson\gson\2.3.1\gson-2.3.1.jar;C:\Users\Nikis\.m2\repository\com\squareup\okhttp\okhttp\2.3.0\okhttp-2.3.0.jar;C:\Users\Nikis\.m2\repository\com\squareup\retrofit\retrofit\1.9.0\retrofit-1.9.0.jar;C:\Users\Nikis\.m2\repository\org\slf4j\slf4j-api\1.7.10\slf4j-api-1.7.10.jar;C:\Users\Nikis\.m2\repository\com\squareup\okio\okio\1.6.0\okio-1.6.0.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\json-path\5.4.0\json-path-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy-json\4.0.16\groovy-json-4.0.16.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\rest-assured-common\5.4.0\rest-assured-common-5.4.0.jar;"/>
+    <property name="java.class.path" value="E:\Downloads\yandex-disk\target\test-classes;E:\Downloads\yandex-disk\target\classes;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\Nikis\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Nikis\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\Nikis\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\Nikis\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\rest-assured\5.4.0\rest-assured-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy\4.0.16\groovy-4.0.16.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy-xml\4.0.16\groovy-xml-4.0.16.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\Nikis\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Nikis\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\Nikis\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Nikis\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\xml-path\5.4.0\xml-path-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\Nikis\.m2\repository\com\yandex\android\disk-restapi-sdk\1.03\disk-restapi-sdk-1.03.jar;C:\Users\Nikis\.m2\repository\com\google\code\gson\gson\2.3.1\gson-2.3.1.jar;C:\Users\Nikis\.m2\repository\com\squareup\okhttp\okhttp\2.3.0\okhttp-2.3.0.jar;C:\Users\Nikis\.m2\repository\com\squareup\retrofit\retrofit\1.9.0\retrofit-1.9.0.jar;C:\Users\Nikis\.m2\repository\org\slf4j\slf4j-api\1.7.10\slf4j-api-1.7.10.jar;C:\Users\Nikis\.m2\repository\com\squareup\okio\okio\1.6.0\okio-1.6.0.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\json-path\5.4.0\json-path-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy-json\4.0.16\groovy-json-4.0.16.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\rest-assured-common\5.4.0\rest-assured-common-5.4.0.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -16,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\Nikis\AppData\Local\Temp\surefire11355367885614655613\surefirebooter-20260313085506920_3.jar C:\Users\Nikis\AppData\Local\Temp\surefire11355367885614655613 2026-03-13T08-55-06_744-jvmRun1 surefire-20260313085506920_1tmp surefire_0-20260313085506920_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Nikis\AppData\Local\Temp\surefire10320429811462114311\surefirebooter-20260313122153895_3.jar C:\Users\Nikis\AppData\Local\Temp\surefire10320429811462114311 2026-03-13T12-21-53_759-jvmRun1 surefire-20260313122153895_1tmp surefire_0-20260313122153895_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="E:\Downloads\yandex-disk-api-tests (2)\target\test-classes;E:\Downloads\yandex-disk-api-tests (2)\target\classes;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\Nikis\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Nikis\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\Nikis\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\Nikis\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\rest-assured\5.4.0\rest-assured-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy\4.0.16\groovy-4.0.16.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy-xml\4.0.16\groovy-xml-4.0.16.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\Nikis\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Nikis\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\Nikis\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Nikis\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\xml-path\5.4.0\xml-path-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\Nikis\.m2\repository\com\yandex\android\disk-restapi-sdk\1.03\disk-restapi-sdk-1.03.jar;C:\Users\Nikis\.m2\repository\com\google\code\gson\gson\2.3.1\gson-2.3.1.jar;C:\Users\Nikis\.m2\repository\com\squareup\okhttp\okhttp\2.3.0\okhttp-2.3.0.jar;C:\Users\Nikis\.m2\repository\com\squareup\retrofit\retrofit\1.9.0\retrofit-1.9.0.jar;C:\Users\Nikis\.m2\repository\org\slf4j\slf4j-api\1.7.10\slf4j-api-1.7.10.jar;C:\Users\Nikis\.m2\repository\com\squareup\okio\okio\1.6.0\okio-1.6.0.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\json-path\5.4.0\json-path-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy-json\4.0.16\groovy-json-4.0.16.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\rest-assured-common\5.4.0\rest-assured-common-5.4.0.jar;"/>
+    <property name="surefire.test.class.path" value="E:\Downloads\yandex-disk\target\test-classes;E:\Downloads\yandex-disk\target\classes;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\Nikis\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Nikis\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\Nikis\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\Nikis\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\Nikis\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\rest-assured\5.4.0\rest-assured-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy\4.0.16\groovy-4.0.16.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy-xml\4.0.16\groovy-xml-4.0.16.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\Nikis\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Nikis\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\Nikis\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\Nikis\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\Nikis\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\xml-path\5.4.0\xml-path-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\Nikis\.m2\repository\com\yandex\android\disk-restapi-sdk\1.03\disk-restapi-sdk-1.03.jar;C:\Users\Nikis\.m2\repository\com\google\code\gson\gson\2.3.1\gson-2.3.1.jar;C:\Users\Nikis\.m2\repository\com\squareup\okhttp\okhttp\2.3.0\okhttp-2.3.0.jar;C:\Users\Nikis\.m2\repository\com\squareup\retrofit\retrofit\1.9.0\retrofit-1.9.0.jar;C:\Users\Nikis\.m2\repository\org\slf4j\slf4j-api\1.7.10\slf4j-api-1.7.10.jar;C:\Users\Nikis\.m2\repository\com\squareup\okio\okio\1.6.0\okio-1.6.0.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\json-path\5.4.0\json-path-5.4.0.jar;C:\Users\Nikis\.m2\repository\org\apache\groovy\groovy-json\4.0.16\groovy-json-4.0.16.jar;C:\Users\Nikis\.m2\repository\io\rest-assured\rest-assured-common\5.4.0\rest-assured-common-5.4.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Nikis"/>
     <property name="user.language" value="ru"/>
@@ -26,12 +25,12 @@
     <property name="java.version.date" value="2025-01-21"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-23"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="E:\Downloads\yandex-disk-api-tests (2)"/>
+    <property name="basedir" value="E:\Downloads\yandex-disk"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Nikis\AppData\Local\Temp\surefire11355367885614655613\surefirebooter-20260313085506920_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Nikis\AppData\Local\Temp\surefire10320429811462114311\surefirebooter-20260313122153895_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.2+7-58"/>
@@ -47,7 +46,7 @@
     <property name="java.io.tmpdir" value="C:\Users\Nikis\AppData\Local\Temp\"/>
     <property name="idea.version" value="2025.1.1.1"/>
     <property name="java.version" value="23.0.2"/>
-    <property name="user.dir" value="E:\Downloads\yandex-disk-api-tests (2)"/>
+    <property name="user.dir" value="E:\Downloads\yandex-disk"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
@@ -60,39 +59,29 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="createFolder_newFolder_returns201" classname="operations.FileOperationsTest" time="3.049"/>
-  <testcase name="createFolder_alreadyExists_returns409" classname="operations.FileOperationsTest" time="0.358"/>
-  <testcase name="createFolder_invalidToken_returns401" classname="operations.FileOperationsTest" time="0.079"/>
-  <testcase name="createFolder_missingPath_returns400" classname="operations.FileOperationsTest" time="0.075"/>
-  <testcase name="createFolder_parentNotExists_returns409" classname="operations.FileOperationsTest" time="0.504"/>
-  <testcase name="copyResource_validCopy_returns201" classname="operations.FileOperationsTest" time="3.558">
-    <failure message="ПРЕДУПРЕЖДЕНИЕ: POST /v1/disk/resources/copy (корректное копирование) — Ожидаемые коды: [201, 202], Полученный код: 409. Тело ответа: {&quot;error&quot;:&quot;DiskResourceAlreadyExistsError&quot;,&quot;description&quot;:&quot;Resource \&quot;disk:/autotest_temp/file_operations_tests/copy_dest\&quot; already exists.&quot;,&quot;message&quot;:&quot;Ресурс \&quot;disk:/autotest_temp/file_operations_tests/copy_dest\&quot; уже существует.&quot;}" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: ПРЕДУПРЕЖДЕНИЕ: POST /v1/disk/resources/copy (корректное копирование) — Ожидаемые коды: [201, 202], Полученный код: 409. Тело ответа: {"error":"DiskResourceAlreadyExistsError","description":"Resource \"disk:/autotest_temp/file_operations_tests/copy_dest\" already exists.","message":"Ресурс \"disk:/autotest_temp/file_operations_tests/copy_dest\" уже существует."}
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:38)
-	at org.junit.jupiter.api.Assertions.fail(Assertions.java:138)
-	at base.BaseTest.assertStatusCodeOneOf(BaseTest.java:149)
-	at operations.FileOperationsTest.copyResource_validCopy_returns201(FileOperationsTest.java:156)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-]]></failure>
-  </testcase>
-  <testcase name="copyResource_destExists_returns409" classname="operations.FileOperationsTest" time="0.823"/>
-  <testcase name="copyResource_sourceNotFound_returns404" classname="operations.FileOperationsTest" time="0.324"/>
-  <testcase name="copyResource_invalidToken_returns401" classname="operations.FileOperationsTest" time="0.096"/>
-  <testcase name="copyResource_overwrite_returns201" classname="operations.FileOperationsTest" time="1.666"/>
-  <testcase name="moveResource_validMove_returns201" classname="operations.FileOperationsTest" time="5.31"/>
-  <testcase name="moveResource_sourceNotFound_returns404" classname="operations.FileOperationsTest" time="0.375"/>
-  <testcase name="moveResource_destExists_returns409" classname="operations.FileOperationsTest" time="1.921"/>
-  <testcase name="moveResource_invalidToken_returns401" classname="operations.FileOperationsTest" time="0.093"/>
-  <testcase name="deleteResource_existingFolder_returns204" classname="operations.FileOperationsTest" time="3.148"/>
-  <testcase name="deleteResource_notFound_returns404" classname="operations.FileOperationsTest" time="0.32"/>
-  <testcase name="deleteResource_invalidToken_returns401" classname="operations.FileOperationsTest" time="0.079"/>
-  <testcase name="deleteResource_missingPath_returns400" classname="operations.FileOperationsTest" time="0.088"/>
-  <testcase name="deleteResource_toTrash_returns204" classname="operations.FileOperationsTest" time="3.17"/>
-  <testcase name="getOperationStatus_invalidId_returns404" classname="operations.FileOperationsTest" time="0.154"/>
-  <testcase name="getOperationStatus_invalidToken_returns401" classname="operations.FileOperationsTest" time="0.081"/>
-  <testcase name="getOperationStatus_fromAsyncOperation_returns200" classname="operations.FileOperationsTest" time="1.42">
-    <system-out><![CDATA[ИНФОРМАЦИЯ: Удаление выполнено синхронно (код 404), тест статуса операции пропущен — для проверки нужна асинхронная операция.
+  <testcase name="createFolder_newFolder_returns201" classname="operations.FileOperationsTest" time="0.975"/>
+  <testcase name="createFolder_alreadyExists_returns409" classname="operations.FileOperationsTest" time="0.516"/>
+  <testcase name="createFolder_invalidToken_returns401" classname="operations.FileOperationsTest" time="0.122"/>
+  <testcase name="createFolder_missingPath_returns400" classname="operations.FileOperationsTest" time="0.089"/>
+  <testcase name="createFolder_parentNotExists_returns409" classname="operations.FileOperationsTest" time="0.34"/>
+  <testcase name="copyResource_validCopy_returns201" classname="operations.FileOperationsTest" time="3.826"/>
+  <testcase name="copyResource_destExists_returns409" classname="operations.FileOperationsTest" time="0.569"/>
+  <testcase name="copyResource_sourceNotFound_returns404" classname="operations.FileOperationsTest" time="0.475"/>
+  <testcase name="copyResource_invalidToken_returns401" classname="operations.FileOperationsTest" time="0.923"/>
+  <testcase name="copyResource_overwrite_returns201" classname="operations.FileOperationsTest" time="1.97"/>
+  <testcase name="moveResource_validMove_returns201" classname="operations.FileOperationsTest" time="3.974"/>
+  <testcase name="moveResource_sourceNotFound_returns404" classname="operations.FileOperationsTest" time="0.495"/>
+  <testcase name="moveResource_destExists_returns409" classname="operations.FileOperationsTest" time="2.086"/>
+  <testcase name="moveResource_invalidToken_returns401" classname="operations.FileOperationsTest" time="0.081"/>
+  <testcase name="deleteResource_existingFolder_returns204" classname="operations.FileOperationsTest" time="3.39"/>
+  <testcase name="deleteResource_notFound_returns404" classname="operations.FileOperationsTest" time="0.311"/>
+  <testcase name="deleteResource_invalidToken_returns401" classname="operations.FileOperationsTest" time="0.094"/>
+  <testcase name="deleteResource_missingPath_returns400" classname="operations.FileOperationsTest" time="0.089"/>
+  <testcase name="deleteResource_toTrash_returns204" classname="operations.FileOperationsTest" time="3.183"/>
+  <testcase name="getOperationStatus_invalidId_returns404" classname="operations.FileOperationsTest" time="0.145"/>
+  <testcase name="getOperationStatus_invalidToken_returns401" classname="operations.FileOperationsTest" time="0.075"/>
+  <testcase name="getOperationStatus_fromAsyncOperation_returns200" classname="operations.FileOperationsTest" time="2.137">
+    <system-out><![CDATA[ИНФОРМАЦИЯ: Удаление выполнено синхронно (код 204), тест статуса операции пропущен — для проверки нужна асинхронная операция.
 ]]></system-out>
   </testcase>
 </testsuite>
