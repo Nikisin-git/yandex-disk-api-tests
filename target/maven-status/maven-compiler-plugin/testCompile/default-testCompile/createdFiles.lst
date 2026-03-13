@@ -1,0 +1,8 @@
+base\BaseTest.class
+diskinfo\DiskInfoTest.class
+downloadupload\DownloadUploadTest.class
+shared\SharedDriveFilesTest.class
+operations\FileOperationsTest.class
+publish\PublicResourcesTest.class
+trash\TrashTest.class
+shared\SharedDrivesTest.class
