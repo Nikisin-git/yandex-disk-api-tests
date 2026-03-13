@@ -88,7 +88,7 @@ oauth.token=YOUR_OAUTH_TOKEN_HERE
 
 Пример с реальным токеном:
 ```properties
-oauth.token=y0_AgAAAABkx9q7AADLWwAAAAD3aCkLAAA...
+oauth.token=y0_AgAAAABkx9q7AADLWwAAAAD3aCkLAAA...   
 ```
 
 ### Способ 2: Переменная окружения
@@ -128,7 +128,6 @@ $env:OAUTH_TOKEN="ваш_токен"
    - `cloud_api:disk.info` — Информация о Диске
 4. Получите токен через OAuth-авторизацию
 
-> ⚠️ **ВАЖНО:** Не используйте личный аккаунт для тестирования! Создайте отдельный тестовый аккаунт Яндекса. Тесты создают, удаляют и перемещают файлы и папки на Диске.
 
 ---
 
@@ -137,23 +136,23 @@ $env:OAUTH_TOKEN="ваш_токен"
 ### Из командной строки (Maven)
 
 ```bash
-# Запуск всех тестов
-  mvn clean test
-
-# Запуск с указанием токена через параметр
-  mvn clean test -Doauth.token="y0__xCUpPXeCBjO8D4gxKCb3RYwk-jRiAjQ2nhx58prkzcemfl0Ng3a_GtLAQ"
-
-  # Запуск конкретной группы тестов
-mvn clean test -Dtest="diskinfo.DiskInfoTest"
-mvn clean test -Dtest="downloadupload.DownloadUploadTest"
-mvn clean test -Dtest="operations.FileOperationsTest"
-mvn clean test -Dtest="publish.PublicResourcesTest"
-mvn clean test -Dtest="shared.SharedDrivesTest"
-mvn clean test -Dtest="shared.SharedDriveFilesTest"
-  mvn clean test -Dtest="trash.TrashTest"
-
-# Запуск конкретного теста
-  mvn clean test -Dtest="diskinfo.DiskInfoTest#getDiskInfo_validToken_returns200"
+   
+       # Запуск всех тестов
+        mvn clean test
+        
+      # Запуск с указанием токена через параметр
+        mvn clean test -Doauth.token="y0__xCUpPXeCBjO8D4gxKCb3RYwk-jRiAjQ2nhx58prkzcemfl0Ng3a_GtLAQ"
+        
+        # Запуск конкретной группы тестов
+      mvn clean test -Dtest=diskinfo.DiskInfoTest
+      mvn clean test -Dtest=downloadupload.DownloadUploadTest
+      mvn clean test -Dtest=operations.FileOperationsTest
+      mvn clean test -Dtest=publish.PublicResourcesTest
+      mvn clean test -Dtest=shared.SharedDrivesTest
+      mvn clean test -Dtest=.SharedDriveFilesTest
+      mvn clean test -Dtest=trash.TrashTest
+        
+      mvn clean test -Dtest=diskinfo.DiskInfoTest#getDiskInfo_validToken_returns200 
 ```
 
 ### Из IntelliJ IDEA
@@ -209,10 +208,6 @@ mvn clean install -U
 2. В IntelliJ IDEA: `File → Project Structure → Project → SDK` → выберите JDK 17+
 3. Также проверьте: `File → Settings → Build → Compiler → Java Compiler → Target bytecode version` → 17
 
-### Проблема: Тесты падают с таймаутами или 429 (Too Many Requests)
-**Решение:** API Яндекс.Диска имеет ограничения по частоте запросов. Попробуйте:
-1. Запускать тесты по группам, а не все сразу
-2. Добавить паузы между запусками: `mvn test -Dsurefire.forkCount=1`
 
 ### Проблема: Тесты Корзины падают
 **Решение:** Убедитесь, что Корзина Яндекс.Диска не переполнена. При необходимости очистите её вручную через веб-интерфейс: https://disk.yandex.ru/client/trash
