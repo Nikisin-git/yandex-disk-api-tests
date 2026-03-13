@@ -2,7 +2,7 @@
 
 Проект автоматизированного тестирования [REST API Яндекс.Диска](https://yandex.ru/dev/disk/rest/).
 
-Покрываются методы **GET**, **POST**, **PUT** и **DELETE** (методы PATCH не тестируются).
+Покрываются методы **GET**, **POST**, **PUT** и **DELETE**.
 
 ---
 
@@ -128,6 +128,7 @@ $env:OAUTH_TOKEN="ваш_токен"
    - `cloud_api:disk.info` — Информация о Диске
 4. Получите токен через OAuth-авторизацию
 
+> ⚠️ **ВАЖНО:** Не используйте личный аккаунт для тестирования! Создайте отдельный тестовый аккаунт Яндекса. Тесты создают, удаляют и перемещают файлы и папки на Диске.
 
 ---
 
@@ -137,11 +138,11 @@ $env:OAUTH_TOKEN="ваш_токен"
 
 ```bash
    
-       # Запуск всех тестов
-        mvn clean test
+      # Запуск всех тестов
+      mvn clean test
         
       # Запуск с указанием токена через параметр
-        mvn clean test -Doauth.token="y0__xCUpPXeCBjO8D4gxKCb3RYwk-jRiAjQ2nhx58prkzcemfl0Ng3a_GtLAQ"
+      mvn clean test -Doauth.token=YOUR_OAUTH_TOKEN_HERE
         
         # Запуск конкретной группы тестов
       mvn clean test -Dtest=diskinfo.DiskInfoTest
@@ -153,7 +154,7 @@ $env:OAUTH_TOKEN="ваш_токен"
       mvn clean test -Dtest=trash.TrashTest
         
       mvn clean test -Dtest=diskinfo.DiskInfoTest#getDiskInfo_validToken_returns200 
-```
+````
 
 ### Из IntelliJ IDEA
 
@@ -168,12 +169,12 @@ $env:OAUTH_TOKEN="ваш_токен"
 ## Что делать, если тесты не запускаются
 
 ### Проблема: «OAuth-токен не задан!»
-**Решение:** Убедитесь, что вы указали реальный OAuth-токен одним из трёх способов (см. выше). Проверьте, что значение не осталось `YOUR_OAUTH_TOKEN_HERE`.
+Убедитесь, что вы указали реальный OAuth-токен одним из трёх способов (см. выше). Проверьте, что значение не осталось `YOUR_OAUTH_TOKEN_HERE`.
 
 ### Проблема: Maven не находит зависимости
 **Решение:**
 ```bash
-mvn clean install -U
+  mvn clean install -U
 ```
 Если `com.yandex.android:disk-restapi-sdk:1.03` не загружается:
 1. Проверьте доступность [Maven Central](https://mvnrepository.com/artifact/com.yandex.android/disk-restapi-sdk/1.03)
@@ -186,21 +187,7 @@ mvn clean install -U
      -Dversion=1.03 \
      -Dpackaging=jar
 ```
-3. Или клонируйте [исходный код SDK](https://github.com/yandex-disk/yandex-disk-restapi-java) и соберите локально:
-```bash
-   git clone https://github.com/yandex-disk/yandex-disk-restapi-java.git
-   cd yandex-disk-restapi-java
-   mvn clean install
-```
 
-### Проблема: IntelliJ IDEA не видит тестовые классы
-**Решение:**
-1. `File → Invalidate Caches → Invalidate and Restart`
-2. Убедитесь, что `src/test/java` отмечена как **Test Sources Root** (зелёная папка):
-   - Правый клик на `src/test/java` → `Mark Directory as → Test Sources Root`
-3. Убедитесь, что `src/test/resources` отмечена как **Test Resources Root**:
-   - Правый клик на `src/test/resources` → `Mark Directory as → Test Resources Root`
-4. Перезагрузите Maven-проект: `View → Tool Windows → Maven → кнопка обновления (⟳)`
 
 ### Проблема: Ошибка «java: error: release version 17 not supported»
 **Решение:** Установите Java 17 или новее:
@@ -208,11 +195,7 @@ mvn clean install -U
 2. В IntelliJ IDEA: `File → Project Structure → Project → SDK` → выберите JDK 17+
 3. Также проверьте: `File → Settings → Build → Compiler → Java Compiler → Target bytecode version` → 17
 
-
-### Проблема: Тесты Корзины падают
-**Решение:** Убедитесь, что Корзина Яндекс.Диска не переполнена. При необходимости очистите её вручную через веб-интерфейс: https://disk.yandex.ru/client/trash
-
-### Проблема: Ошибка кодировки (кракозябры в консоли)
+### Проблема: Ошибка кодировки
 **Решение:**
 1. В IntelliJ IDEA: `File → Settings → Editor → File Encodings` → установите **UTF-8** везде
 2. При запуске через Maven добавьте: `mvn test -Dfile.encoding=UTF-8`
