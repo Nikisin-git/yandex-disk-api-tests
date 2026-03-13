@@ -9,26 +9,29 @@
 ## Структура проекта
 
 ```
-src/test/java/
-├── base/
-│   └── BaseTest.java                  — Базовый класс с общей логикой
-├── diskinfo/
-│   └── DiskInfoTest.java              — Получение информации о файлах и папках
-├── downloadupload/
-│   └── DownloadUploadTest.java        — Скачивание и загрузка
-├── operations/
-│   └── FileOperationsTest.java        — Операции над файлами и папками
-├── publish/
-│   ├── PublicResourcesTest.java       — Публичные файлы и папки
-│ 
-├── shared/
-│   ├── SharedDrivesTest.java          — Общие диски организации (Яндекс 360)
-│   └── SharedDriveFilesTest.java      — Файлы и папки на общем диске
-└── trash/
-    └── TrashTest.java                 — Корзина
+src
+└──test
+   │ └──java
+   │      ├── base
+   │      │   └── BaseTest.java                  — Базовый класс с общей логикой
+   │      ├── diskinfo/
+   │      │   └── DiskInfoTest.java              — Получение информации о файлах и папках
+   │      ├── downloadupload/
+   │      │   └── DownloadUploadTest.java        — Скачивание и загрузка
+   │      ├── operations/
+   │      │   └── FileOperationsTest.java        — Операции над файлами и папками
+   │      ├── publish/
+   │      │   ├── PublicResourcesTest.java       — Публичные файлы и папки
+   │      │   └── PublicResourcesAdminTest.java  — Публичные файлы и папки (для администраторов)
+   │      ├── shared/
+   │      │   ├── SharedDrivesTest.java          — Общие диски организации (Яндекс 360)
+   │      │   └── SharedDriveFilesTest.java      — Файлы и папки на общем диске
+   │      └── trash/
+   │          └── TrashTest.java                 — Корзина
+   │      
+   │     
+   └── config.properties                  — Файл конфигурации (здесь указывается токен)
 
-src/test/resources/
-└── config.properties                  — Файл конфигурации (здесь указывается токен)
 ```
 
 ---
@@ -138,7 +141,7 @@ mvn test -Doauth.token="ваш_токен"
 mvn clean test
 
 # Запуск с указанием токена через параметр
-mvn clean test -Doauth.token="ваш_токен"
+mvn clean test -Doauth.token="y0__xCUpPXeCBjO8D4gxKCb3RYwk-jRiAjQ2nhx58prkzcemfl0Ng3a_GtLAQ"
 
 # Запуск конкретной группы тестов
 mvn clean test -Dtest="diskinfo.DiskInfoTest"
@@ -205,12 +208,6 @@ mvn clean install
 1. Скачайте JDK 17+ с [Adoptium](https://adoptium.net/) или [Oracle](https://www.oracle.com/java/technologies/downloads/)
 2. В IntelliJ IDEA: `File → Project Structure → Project → SDK` → выберите JDK 17+
 3. Также проверьте: `File → Settings → Build → Compiler → Java Compiler → Target bytecode version` → 17
-
-### Проблема: Тесты shared/ и PublicResourcesAdminTest падают
-**Решение:** Это нормально для обычного аккаунта Яндекса:
-- Тесты группы **«Общие диски»** и **«Файлы и папки на общем диске»** требуют аккаунта **Яндекс 360 для бизнеса**
-- Тесты группы **«Публичные файлы — для администраторов»** требуют прав **администратора организации**
-- Для обычных аккаунтов эти тесты будут пропущены (skipped) или завершатся с ожидаемым кодом 403/404
 
 ### Проблема: Тесты падают с таймаутами или 429 (Too Many Requests)
 **Решение:** API Яндекс.Диска имеет ограничения по частоте запросов. Попробуйте:
